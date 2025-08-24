@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+# Stop service before removal
+systemctl stop nodpi.service || true
+systemctl disable nodpi.service || true
+systemctl daemon-reload || true

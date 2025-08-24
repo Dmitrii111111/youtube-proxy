@@ -1,0 +1,30 @@
+#!/bin/bash
+set -e
+
+# Create log directory if it doesn't exist
+mkdir -p /var/log/nodpi
+chown root:root /var/log/nodpi
+chmod 755 /var/log/nodpi
+
+# Create share directory if it doesn't exist
+mkdir -p /usr/share/nodpi
+chown root:root /usr/share/nodpi
+chmod 755 /usr/share/nodpi
+
+# Install zenity if not present (required for GUI control)
+if ! command -v zenity &> /dev/null; then
+    echo "Устанавливаем zenity для GUI управления..."
+    apt-get update && apt-get install -y zenity
+fi
+
+# Reload systemd and enable service
+systemctl daemon-reload
+systemctl enable nodpi.service
+systemctl start nodpi.service
+
+# Update application icons
+update-desktop-database /usr/share/applications
+
+echo "NoDPI proxy server has been installed and started successfully!"
+echo "The service will automatically start on system boot."
+echo "You can manage it using: sudo systemctl start/stop/restart nodpi"

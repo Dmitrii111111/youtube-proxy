@@ -1,0 +1,45 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	# Create directories
+mkdir -p debian/nodpi/usr/bin
+mkdir -p debian/nodpi/usr/share/nodpi
+mkdir -p debian/nodpi/etc/systemd/system
+mkdir -p debian/nodpi/var/log/nodpi
+mkdir -p debian/nodpi/usr/share/applications
+mkdir -p debian/nodpi/DEBIAN
+mkdir -p debian/nodpi/usr/share/doc/nodpi
+	
+	# Copy main files
+cp nodpi.py debian/nodpi/usr/bin/
+cp blacklist.txt debian/nodpi/usr/share/nodpi/
+cp nodpi-control.sh debian/nodpi/usr/bin/
+cp LICENSE debian/nodpi/usr/share/doc/nodpi/
+	
+	# Make script executable
+	chmod +x debian/nodpi/usr/bin/nodpi.py
+	
+	# Create systemd service file
+	cp debian/nodpi.service debian/nodpi/etc/systemd/system/
+	
+	# Create desktop file
+	cp debian/nodpi.desktop debian/nodpi/usr/share/applications/
+	
+	# Create postinst script
+	cp debian/postinst debian/nodpi/DEBIAN/
+	
+	# Create prerm script
+	cp debian/prerm debian/nodpi/DEBIAN/
+	
+	# Make scripts executable
+	chmod +x debian/nodpi/DEBIAN/postinst
+	chmod +x debian/nodpi/DEBIAN/prerm
+
+override_dh_fixperms:
+	dh_fixperms
+	# Set correct permissions
+	chmod 644 debian/nodpi/etc/systemd/system/nodpi.service
+	chmod 644 debian/nodpi/usr/share/applications/nodpi.desktop

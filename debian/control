@@ -1,0 +1,29 @@
+Source: nodpi
+Section: net
+Priority: optional
+Maintainer: Dmitriy <ushako160696@gmail.com>
+Build-Depends: debhelper (>= 13), python3
+Standards-Version: 4.6.2
+Homepage: https://github.com/Dmitrii111111/youtube-proxy
+Vcs-Browser: https://github.com/Dmitrii111111/youtube-proxy
+Vcs-Git: https://github.com/Dmitrii111111/youtube-proxy.git
+
+Package: nodpi
+Architecture: all
+Depends: python3 (>= 3.7)
+License: MIT
+Description: YouTube Proxy Server with DPI Bypass
+ NoDPI is a high-performance HTTPS proxy server designed
+ to bypass Deep Packet Inspection (DPI) systems and provide
+ access to YouTube and related services.
+ .
+ Features:
+  * HTTPS proxy support
+  * DPI bypass through traffic fragmentation
+  * Automatic startup on system boot
+  * Built-in domain blacklist
+  * Asynchronous architecture for high performance
+ .
+ The proxy runs on port 8881 and automatically starts
+ when the system boots up.
+

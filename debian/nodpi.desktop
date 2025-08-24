@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=NoDPI Control
+Comment=Manage NoDPI Proxy Server
+Exec=/usr/bin/nodpi-control.sh
+Icon=network-server
+Terminal=false
+Categories=Network;Internet;

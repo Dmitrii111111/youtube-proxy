@@ -1,0 +1,19 @@
+[Unit]
+Description=NoDPI YouTube Proxy Server
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=nobody
+Group=nogroup
+ExecStart=/usr/bin/python3 /usr/bin/nodpi.py
+WorkingDirectory=/usr/share/nodpi
+Restart=always
+RestartSec=3
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=nodpi
+
+[Install]
+WantedBy=multi-user.target

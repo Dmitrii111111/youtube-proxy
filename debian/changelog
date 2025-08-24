@@ -1,0 +1,10 @@
+nodpi (1.0.0) unstable; urgency=medium
+
+  * Initial release
+  * HTTPS proxy server with DPI bypass
+  * Automatic startup on system boot
+  * Built-in YouTube domain blacklist
+  * Asynchronous architecture for high performance
+
+ -- Dmitriy <ushako160696@gmail.com>  Thu, 25 Aug 2024 00:00:00 +0300
+
