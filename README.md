@@ -188,8 +188,7 @@ sudo tail -f /var/log/nodpi/proxy.log
 ```
 /usr/bin/nodpi.py              # Основной скрипт
 /usr/share/nodpi/              # Дополнительные файлы
-├── blacklist.txt              # Черный список доменов
-└── config.ini                 # Конфигурация
+├── blacklist.txt              # Домены YouTube для обхода DPI
 /etc/systemd/system/nodpi.service # Systemd сервис
 /var/log/nodpi/                 # Директория логов
 ```
