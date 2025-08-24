@@ -5,19 +5,19 @@
 
 override_dh_auto_install:
 	# Create directories
-mkdir -p debian/nodpi/usr/bin
-mkdir -p debian/nodpi/usr/share/nodpi
-mkdir -p debian/nodpi/etc/systemd/system
-mkdir -p debian/nodpi/var/log/nodpi
-mkdir -p debian/nodpi/usr/share/applications
-mkdir -p debian/nodpi/DEBIAN
-mkdir -p debian/nodpi/usr/share/doc/nodpi
+	mkdir -p debian/nodpi/usr/bin
+	mkdir -p debian/nodpi/usr/share/nodpi
+	mkdir -p debian/nodpi/etc/systemd/system
+	mkdir -p debian/nodpi/var/log/nodpi
+	mkdir -p debian/nodpi/usr/share/applications
+	mkdir -p debian/nodpi/DEBIAN
+	mkdir -p debian/nodpi/usr/share/doc/nodpi
 	
 	# Copy main files
-cp nodpi.py debian/nodpi/usr/bin/
-cp blacklist.txt debian/nodpi/usr/share/nodpi/
-cp nodpi-control.sh debian/nodpi/usr/bin/
-cp LICENSE debian/nodpi/usr/share/doc/nodpi/
+	cp nodpi.py debian/nodpi/usr/bin/
+	cp blacklist.txt debian/nodpi/usr/share/nodpi/
+	cp nodpi-control.sh debian/nodpi/usr/bin/
+	cp LICENSE debian/nodpi/usr/share/doc/nodpi/
 	
 	# Make script executable
 	chmod +x debian/nodpi/usr/bin/nodpi.py
