@@ -7,7 +7,7 @@ debian/files
 debian/debhelper-build-stamp
 
 # Собранные пакеты
-*.deb
+# *.deb
 *.changes
 *.buildinfo
 *.dsc
