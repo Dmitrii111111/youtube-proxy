@@ -113,6 +113,10 @@ sudo systemctl enable nodpi
 
 # Отключить автозапуск
 sudo systemctl disable nodpi
+
+# Удалить пакет полностью
+sudo apt purge nodpi
+sudo apt autoremove
 ```
 
 ### Просмотр логов:
