@@ -6,7 +6,7 @@
 Файл `nodpi_setup.exe` доступен для скачивания в репозитории проекта:
 
 **Скачать установщик:**
-- [nodpi_setup.exe](nodpi_setup.exe) - Windows установщик (10.2 МБ)
+- [nodpi_setup.exe](https://github.com/Dmitrii111111/youtube-proxy/raw/main/nodpi_setup.exe) - Windows установщик (9.7 МБ)
 - Или клонируйте весь репозиторий: `git clone https://github.com/Dmitrii111111/youtube-proxy.git`
 
 ### 🚀 Установка
