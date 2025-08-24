@@ -13,19 +13,80 @@
 
 ## 📦 Установка
 
-### Вариант 1: Установка готового DEB пакета (рекомендуется)
+### Вариант 1: Сборка и установка DEB пакета (рекомендуется)
 
-1. Скачайте файл `nodpi_1.0.0_all.deb`
-2. Дважды кликните на файл (откроется Ubuntu Software Center)
-3. Нажмите "Установить"
-4. Введите пароль администратора
-5. Готово! Прокси автоматически запустится
-
-### Вариант 2: Установка через терминал
-
+1. Клонируйте репозиторий:
 ```bash
-sudo dpkg -i nodpi_1.0.0_all.deb
+git clone https://github.com/Dmitrii111111/youtube-proxy.git
+cd youtube-proxy
+```
+
+2. Соберите пакет:
+```bash
+./build_deb.sh
+```
+
+3. Установите собранный пакет:
+```bash
+sudo dpkg -i ../nodpi_1.0.0_all.deb
 sudo apt-get install -f  # если есть проблемы с зависимостями
+```
+
+### Вариант 2: Установка зависимостей и запуск вручную
+
+Если вы не хотите собирать DEB пакет, можете установить и запустить прокси вручную:
+
+#### 1. Установите зависимости:
+```bash
+sudo apt update
+sudo apt install python3 python3-pip
+```
+
+#### 2. Скопируйте файлы в систему:
+```bash
+# Создайте директории
+sudo mkdir -p /usr/local/bin
+sudo mkdir -p /usr/local/share/nodpi
+sudo mkdir -p /var/log/nodpi
+
+# Скопируйте файлы
+sudo cp nodpi.py /usr/local/bin/
+sudo cp blacklist.txt /usr/local/share/nodpi/
+sudo chmod +x /usr/local/bin/nodpi.py
+```
+
+#### 3. Создайте systemd сервис:
+```bash
+sudo tee /etc/systemd/system/nodpi.service > /dev/null <<EOF
+[Unit]
+Description=NoDPI YouTube Proxy Server
+After=network.target
+
+[Service]
+Type=simple
+User=nobody
+Group=nogroup
+ExecStart=/usr/local/bin/python3 /usr/local/bin/nodpi.py
+WorkingDirectory=/usr/local/share/nodpi
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+#### 4. Запустите сервис:
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable nodpi
+sudo systemctl start nodpi
+```
+
+#### 5. Проверьте работу:
+```bash
+sudo systemctl status nodpi
+sudo netstat -tlnp | grep 8881
 ```
 
 ## 🔧 Управление сервисом
