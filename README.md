@@ -15,7 +15,7 @@
 
 ### 🪟 Windows (рекомендуется для Windows пользователей)
 
-1. Скачайте файл [nodpi_setup.exe](https://github.com/Dmitrii111111/youtube-proxy/raw/main/nodpi_setup.exe) из репозитория
+1. Скачайте файл [nodpi_setup.exe](https://github.com/UshakovDev/youtube-proxy/raw/main/nodpi_setup.exe) из репозитория
 2. Запустите установщик от имени администратора
 3. Следуйте инструкциям установки
 4. После установки на рабочем столе появится иконка "NoDPI"
@@ -33,7 +33,7 @@
 **Быстрая установка:**
 ```bash
 # Скачайте готовый пакет
-wget https://github.com/Dmitrii111111/youtube-proxy/raw/main/nodpi_1.0.0_all.deb
+wget https://github.com/UshakovDev/youtube-proxy/raw/main/nodpi_1.0.0_all.deb
 
 # Установите пакет
 sudo dpkg -i nodpi_1.0.0_all.deb
@@ -43,7 +43,7 @@ sudo apt-get install -f  # если есть проблемы с зависим�
 **Или сборка из исходного кода:**
 ```bash
 # Клонируйте репозиторий
-git clone https://github.com/Dmitrii111111/youtube-proxy.git
+git clone https://github.com/UshakovDev/youtube-proxy.git
 cd youtube-proxy
 
 # Соберите пакет

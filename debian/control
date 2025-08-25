@@ -4,9 +4,9 @@ Priority: optional
 Maintainer: Dmitriy <ushako160696@gmail.com>
 Build-Depends: debhelper (>= 13), python3
 Standards-Version: 4.6.2
-Homepage: https://github.com/Dmitrii111111/youtube-proxy
-Vcs-Browser: https://github.com/Dmitrii111111/youtube-proxy
-Vcs-Git: https://github.com/Dmitrii111111/youtube-proxy.git
+Homepage: https://github.com/UshakovDev/youtube-proxy
+Vcs-Browser: https://github.com/UshakovDev/youtube-proxy
+Vcs-Git: https://github.com/UshakovDev/youtube-proxy.git
 
 Package: nodpi
 Architecture: all
